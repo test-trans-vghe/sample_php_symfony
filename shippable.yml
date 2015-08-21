@@ -16,7 +16,6 @@ before_install:
   - sudo a2enmod headers
   - sudo service apache2 restart
   - composer self-update
-  - composer install -d dist --prefer-source --no-interaction --optimize-autoloader
   - composer install -d src --prefer-source --no-interaction --optimize-autoloader
 
 script:
