@@ -10,7 +10,7 @@ addons:
 before_script:
   - sudo apt-get update
   - sudo apt-get install apache2
-  - cp config/apache/src.vhost.conf /etc/apache2/sites-available
+  - sudo cp config/src.vhost.conf /etc/apache2/sites-available
   - a2ensite src.vhost.conf
   - a2enmod rewrite
   - a2enmod headers
