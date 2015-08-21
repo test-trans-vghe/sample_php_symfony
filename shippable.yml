@@ -7,7 +7,7 @@ addons:
   hosts:
     local.symfony2-standard-template: 127.0.0.1
 
-before_script:
+before_install:
   - sudo apt-get update
   - sudo apt-get install apache2
   - sudo cp config/src.vhost.conf /etc/apache2/sites-available
@@ -15,8 +15,9 @@ before_script:
   - sudo a2enmod rewrite
   - sudo a2enmod headers
   - sudo service apache2 restart
-  - sudo php composer.phar update
-  - sudo php composer.phar install
+  - composer self-update
+  - composer install -d dist --prefer-source --no-interaction --optimize-autoloader
+  - composer install -d src --prefer-source --no-interaction --optimize-autoloader
 
 script:
   - bin/behat features/test.feature
