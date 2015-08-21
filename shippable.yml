@@ -16,7 +16,7 @@ before_install:
   - sudo a2enmod headers
   - sudo service apache2 restart
   - composer self-update
-  - composer install -d src --prefer-source --no-interaction --optimize-autoloader
+  - composer install -d --prefer-source --no-interaction --optimize-autoloader
 
 script:
   - bin/behat features/test.feature
