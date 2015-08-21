@@ -11,12 +11,12 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install apache2
   - sudo cp config/src.vhost.conf /etc/apache2/sites-available
-  - a2ensite src.vhost.conf
-  - a2enmod rewrite
-  - a2enmod headers
+  - sudo a2ensite src.vhost.conf
+  - sudo a2enmod rewrite
+  - sudo a2enmod headers
   - sudo service apache2 restart
-  - php composer.phar update
-  - php composer.phar install
+  - sudo php composer.phar update
+  - sudo php composer.phar install
 
 script:
   - bin/behat features/test.feature
