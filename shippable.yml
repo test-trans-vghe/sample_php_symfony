@@ -19,6 +19,7 @@ before_install:
   - composer install --prefer-source --no-interaction --optimize-autoloader
 
 script:
+  - app/console server:run
   - bin/behat features/test.feature
 
 notifications:
