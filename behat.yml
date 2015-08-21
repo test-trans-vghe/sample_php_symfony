@@ -6,3 +6,6 @@ default:
       sessions:
         default:
           symfony2: ~
+    jarnaiz\JUnitFormatter\JUnitFormatterExtension:
+      filename: report.xml
+      outputDir: shippable/testresults
