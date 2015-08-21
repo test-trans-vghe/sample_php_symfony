@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 5.9
+
+addons:
+  hosts:
+    local.symfony2-standard-template: 127.0.0.1
+
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install apache2
+  - cp config/apache/src.vhost.conf /etc/apache2/sites-available
+  - a2ensite src.vhost.conf
+  - a2enmod rewrite
+  - a2enmod headers
+  - sudo service apache2 restart
+  - php composer.phar update
+  - php composer.phar install
+
+script:
+  - bin/behat features/test.feature 
